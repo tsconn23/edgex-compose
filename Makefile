@@ -22,7 +22,7 @@ help:
 ARGS:=$(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
 $(eval $(ARGS):;@:)
 
-OPTIONS:=" arm64 no-secty app-sample " # Must have spaces around words for `filter-out` function to work properly
+OPTIONS:=" arm64 no-secty app-sample alvarium " # Must have spaces around words for `filter-out` function to work properly
 
 # Current default is to use stand alone docker-compose.
 # Since compose V2 with the new "docker compose" command in the docker CLI has been released
@@ -41,6 +41,9 @@ ifeq (no-secty, $(filter no-secty,$(ARGS)))
 endif
 ifeq (app-sample, $(filter app-sample,$(ARGS)))
 	APP_SAMPLE:=-with-app-sample
+endif
+ifeq (alvarium, $(filter alvarium,$(ARGS)))
+	APP_SAMPLE:=-alvarium
 endif
 
 SERVICES:=$(filter-out $(OPTIONS),$(ARGS))
@@ -63,7 +66,7 @@ pull:
 	${DOCKER_COMPOSE} -f docker-compose${NO_SECURITY}${ARM64}.yml pull ${SERVICES}
 
 run:
-	${DOCKER_COMPOSE} -p edgex -f docker-compose${NO_SECURITY}${APP_SAMPLE}${ARM64}.yml up -d ${SERVICES}
+	${DOCKER_COMPOSE} -p edgex -f docker-compose${NO_SECURITY}${ALVARIUM}${APP_SAMPLE}${ARM64}.yml up -d ${SERVICES}
 
 down:
 	$(COMPOSE_DOWN)

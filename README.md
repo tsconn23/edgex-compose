@@ -58,6 +58,14 @@ This folder contains the following compose files:
 
     - Use `make run no-secty` and `make down` to start and stop the services using this compose file.
     - Use `make pull no-secty <service(s)>` to pull all or some images for the services in this compose file.
+
+- **docker-compose-no-secty-alvarium.yml**
+    Contains the EdgeX services needed to run in non-secure configuration, along with Alvarium services for scoring support.  Includes the Device Virtual & Device REST device services and the UI.
+    **Make Commands**
+
+    - Use `make run no-secty alvarium` and `make down` to start and stop the services using this compose file.
+    - Use `make pull no-secty <service(s)>` to pull all or some images for the services in this compose file.
+   
     
 - **docker-compose-no-secty-arm64.yml**
     Contains just the services needed to run in non-secure configuration on `ARM64` system.  Includes the Device Virtual & Device REST device services and the UI.
