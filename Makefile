@@ -49,7 +49,7 @@ endif
 SERVICES:=$(filter-out $(OPTIONS),$(ARGS))
 
 define COMPOSE_DOWN
-	${DOCKER_COMPOSE} -p edgex -f docker-compose.yml -f docker-compose-with-app-sample.yml down $1
+	${DOCKER_COMPOSE} -p edgex -f docker-compose${NO_SECURITY}${ALVARIUM}${APP_SAMPLE}${ARM64}.yml down $1
 endef
 
 # Define additional phony targets for all options to enable support for tab-completion in shell
