@@ -294,7 +294,7 @@ services:
       REGISTRY_HOST: edgex-core-consul
       SERVICE_HOST: edgex-device-virtual
     hostname: edgex-device-virtual
-    image: edgexfoundry/device-virtual:2.3.0
+    image: edgexfoundry/device-virtual:0.0.0-dev
     networks:
       edgex-network: {}
     ports:
