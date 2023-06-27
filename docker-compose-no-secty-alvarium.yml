@@ -215,7 +215,7 @@ services:
       DEVICE_SERVICES_CLIENTS_CORE_METADATA_HOST: edgex-core-metadata
       EDGEX_SECURITY_SECRET_STORE: "false"
     hostname: edgex-core-common-config-bootstrapper
-    image: edgexfoundry/core-common-config-bootstrapper:3.0.0
+    image: edgexfoundry/core-common-config-bootstrapper:0.0.0-dev
     networks:
       edgex-network: null
     read_only: true
